@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       // Reset errors
       bookingForm.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
       bookingForm.querySelectorAll('.form-error').forEach(el => el.classList.remove('visible'));
@@ -205,12 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = bookingForm.querySelector('.btn-submit');
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
-
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-          bookingForm.style.display = 'none';
-          formSuccess.classList.add('visible');
-        }, 1500);
+        // Let form submit naturally to FormSubmit.co
+        bookingForm.submit();
+      } else {
+        e.preventDefault();
       }
     });
 
