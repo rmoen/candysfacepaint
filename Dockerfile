@@ -13,6 +13,7 @@ COPY script.js /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY llms.txt /usr/share/nginx/html/
+COPY 7bde64c7933d8038a133353133d631bb.txt /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
 COPY designs/ /usr/share/nginx/html/designs/
 
