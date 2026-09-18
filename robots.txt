@@ -1,0 +1,5 @@
+# Candy's Facepaint — candysfacepaint.com
+User-agent: *
+Allow: /
+
+Sitemap: https://candysfacepaint.com/sitemap.xml

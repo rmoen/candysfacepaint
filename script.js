@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
     document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
   });
 
@@ -266,21 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // --- Parallax Effect on Hero Blobs (desktop only) ---
-  if (window.matchMedia('(min-width: 768px)').matches) {
-    const blobs = document.querySelectorAll('.hero-blob');
-    
-    window.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-      blobs.forEach((blob, i) => {
-        const speed = (i + 1) * 8;
-        blob.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-      });
-    }, { passive: true });
-  }
 
   // --- Service Card Tilt Effect (desktop) ---
   if (window.matchMedia('(min-width: 768px)').matches) {
